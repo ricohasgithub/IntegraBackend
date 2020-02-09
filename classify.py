@@ -20,16 +20,8 @@ response = client.classify_text(document)
 print(text_content)
 
 for category in response.categories:
-        print(u"Category name: {}".format(category.name))
-        print(u"Confidence: {}".format(category.confidence))
-
-def request_text_classification_api(text_content):
-        api_key = read_google_api_key()
-	response = r.post('https://language.googleapis.com/v1beta2/documents:classifyText',
-	                  data=make_image_data([image]),
-	                  params={'key': 'AIzaSyAkuoqnoU1cPWV1vhvjSfe-0IxtmO7pBLg'},
-	                  headers={'Content-Type': 'application/json'})
-	return response
+        print(u"Topic Prediction {}".format(category.name))
+        print(u"Confidence Level: {}".format(category.confidence))
 
 def read_google_api_key():
 	key = 'AIzaSyAkuoqnoU1cPWV1vhvjSfe-0IxtmO7pBLg'
